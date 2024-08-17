@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import Swiper from "react-native-swiper";
 import { useRef, useState } from "react";
-import { onboarding } from "@/app/constants";
+import { onboarding } from "../constants";
 import CustomButton from "@/app/components/CustomButton";
 
 const Onboarding = () => {
