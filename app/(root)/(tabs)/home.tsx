@@ -15,6 +15,7 @@ import GoogleTextInput from "@/app/components/GoogleTextInput";
 import Map from "@/app/components/Map";
 import { useLocationStore } from "@/store";
 import { useEffect, useState } from "react";
+import { useRouter } from "expo-router";
 
 const recentRides = [
   {
@@ -127,6 +128,7 @@ export default function Page() {
   const { setUserLocation, setDestinationLocation } = useLocationStore();
   const { user } = useUser();
   const loading = true;
+  const router = useRouter();
 
   const [hasPermissions, setHasPermissions] = useState(false);
 
@@ -149,7 +151,7 @@ export default function Page() {
       setUserLocation({
         latitude: location.coords?.latitude!,
         longitude: location.coords?.longitude!,
-        address: `${address[0].name}, ${address[0].region}}`,
+        address: `${address[0].name}, ${address[0].region}`,
       });
     };
 
@@ -157,7 +159,16 @@ export default function Page() {
   }, []);
 
   const handleSignOut = () => {};
-  const handleDestinationPress = () => {};
+
+  const handleDestinationPress = (location: {
+    latitude: number;
+    longitude: number;
+    address: string;
+  }) => {
+    setDestinationLocation(location);
+
+    router.push("/(root)/find-ride");
+  };
 
   return (
     <SafeAreaView className="bg-general-500">
