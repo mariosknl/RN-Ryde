@@ -3,7 +3,7 @@ import { ReactNode, useRef } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { icons } from "@/app/constants";
 import { router } from "expo-router";
-import Map from "@/app/components/Map";
+import Map from "@/components/Map";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
 const RideLayout = ({

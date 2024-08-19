@@ -9,10 +9,10 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import RideCard from "@/app/components/RideCard";
+import RideCard from "@/components/RideCard";
 import { icons, images } from "@/app/constants";
-import GoogleTextInput from "@/app/components/GoogleTextInput";
-import Map from "@/app/components/Map";
+import GoogleTextInput from "@/components/GoogleTextInput";
+import Map from "@/components/Map";
 import { useLocationStore } from "@/store";
 import { useEffect, useState } from "react";
 import { useRouter } from "expo-router";
